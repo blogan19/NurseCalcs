@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<script src="Jquery.js"></script>
+	<script src="bootstrap.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="main.css">
+
+
+</head>
+<body class="grad1">
+	
+<nav class="navbar navbar-fixed-top nav grad2">
+	<h4 class="tWhite">Calculations</h4>
+	<div class="row nav grad2">
+
+</nav>
+
+<div class="container padTop">
+	<div class="jumbotron textCentre">
+		Select a question set from the options below. Each quiz contains 10 calculation questions.
+		You can view the answers to each question set after completing all 10 questions. 
+	</div>
+</div>
+
+<div class="container">
+	
+		<a href="" class="list-group-item grad2 tWhite" id="listHead"> Select a set of questions to practice our calculation skills from the options below. Each set of questions can be accessed any number of times</a>
+		<a href="qSet1.html" class="list-group-item" id="qs1"><span id="qsl1">Question set 1</span><input type="checkbox" class="chkR" id="r1" onclick="markComplete(1);save(1)"></a>
+		<a href="qSet2.html" class="list-group-item" id="qs2"><span id="qsl2">Question set 2</span><input type="checkbox" class="chkR" id="r2" onclick="markComplete(2);save(2)"></a>
+		<a href="qSet3.html" class="list-group-item" id="qs3"><span id="qsl3">Question set 3</span><input type="checkbox" class="chkR" id="r3" onclick="markComplete(3);save(3)"></a>
+		<a href="qSet4.html" class="list-group-item" id="qs4"><span id="qsl4">Question set 4</span><input type="checkbox" class="chkR" id="r4" onclick="markComplete(4);save(4)"></a>
+		<a href="qSet5.html" class="list-group-item" id="qs5"><span id="qsl5">Question set 5</span><input type="checkbox" class="chkR" id="r5" onclick="markComplete(5);save(5)"></a>
+		<a href="qSet6.html" class="list-group-item" id="qs6"><span id="qsl6">Question set 6</span><input type="checkbox" class="chkR" id="r6" onclick="markComplete(6);save(6)"></a>
+		<a href="qSet7.html" class="list-group-item" id="qs7"><span id="qsl7">Question set 7</span><input type="checkbox" class="chkR" id="r7" onclick="markComplete(7);save(7)"></a>
+		<a href="qSet8.html" class="list-group-item" id="qs8"><span id="qsl8">Question set 8</span><input type="checkbox" class="chkR" id="r8" onclick="markComplete(8);save(8)"></a>
+		<a href="qSet9.html" class="list-group-item" id="qs9"><span id="qsl9">Question set 9</span><input type="checkbox" class="chkR" id="r9" onclick="markComplete(9);save(9)"></a>
+		<a href="qSet10.html" class="list-group-item" id="qs10"><span id="qsl10">Question set 10</span><input type="checkbox" class="chkR" id="r10" onclick="markComplete(10);save(10)"></a>
+		
+
+	</div>
+</div>
+
+
+
+
+<script src="logo.js"></script>	
+<script type="text/javascript">
+
+	function save(value){
+		  var checkbox = document.getElementById('r'+value);
+  		  localStorage.setItem("checkbox"+value, checkbox.checked);
+
+	}
+	function load(){
+		for(var i = 1; i < 11; i++){
+    	var checked = JSON.parse(localStorage.getItem("checkbox"+i));
+      	document.getElementById("r"+i).checked = checked;
+    	}
+	}
+	load();
+
+	function markComplete(id){
+
+		var radio = document.getElementById("r"+id);
+		if(radio.checked == true){
+			document.getElementById("qs"+id).style.opacity = 0.3;
+			document.getElementById("qsl"+id).textContent = "Question Set " + id + " complete";
+		
+		}else if(radio.checked == false){
+			document.getElementById("qs"+id).style.opacity = 1;
+			document.getElementById("qsl"+id).textContent = "Question Set " + id;
+		}
+	}
+
+	function chkCompleteStatus(){
+		for(var i=1; i < 10; i++){
+
+			var radio = document.getElementById("r"+i);
+		
+			if(radio.checked == true){
+					document.getElementById("qs"+i).style.opacity = 0.3;
+					document.getElementById("qsl"+i).textContent = "Question Set " + i + " complete";
+				
+			}else if(radio.checked == false){
+				document.getElementById("qs"+i).style.opacity = 1;
+				document.getElementById("qsl"+i).textContent = "Question Set " + i;
+			}
+		}
+	}
+	chkCompleteStatus();
+
+	function changeIcon(id){
+
+	var i  = document.getElementById("i"+id);
+    var c = i.className;
+	if(c == "icon glyphicon glyphicon-plus"){
+		i.className = "icon glyphicon glyphicon-minus";
+	}else{
+		i.className = "icon glyphicon glyphicon-plus";
+	}
+}
+	
+</script>
+</body>
+</html>

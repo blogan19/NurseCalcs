@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<widget id="com.drugcalculations.calculations.nursecalculations" version="1.0.1" versionCode = "10" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+
+
+<!-- versionCode is optional and Android only -->
+
+  <name>Nurse Calculations</name>
+
+  <description>
+      An app containing a wide variety of drug calculaions for nurses and nursing students.
+  </description>
+
+  <author href="http://www.clinicalpharmacytraining.co.uk" email="clinicalpharmacytraining@gmail.com">
+       Clinical Pharmacy
+  </author>
+
+   <icon src="icon.png" />
+   <content src="index.html"></content>
+</widget>
