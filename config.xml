@@ -16,4 +16,6 @@
 
    <icon src="icon.png" />
    <content src="index.html"></content>
+
+   <preference name="phonegap-version" value="cli-8.0.0" />
 </widget>
